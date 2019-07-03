@@ -3,6 +3,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 // -routers
+const addRouter = require('./add/router')
 
 // constant valus
 const port = process.env.PORT || 4000
@@ -14,6 +15,7 @@ const app = express()
 // routers
 app.listen(port, () => console.log(`lisenign on port: ${port}`))
 app.use(jsonParser)
+app.use(addRouter)
 
 // can the server respond
 app.get('/ping', (request, response) => {
