@@ -31,3 +31,5 @@ const Add = db.define(
   },
   { tableName: 'add_table' }
 )
+
+module.exports = Add
