@@ -23,6 +23,13 @@ router.get(
     })
     .catch(next)
 )
+router.get(
+  '/adds/:id',
+  (request, response, next) => Add
+    .findByPk(request.params.id)
+    .then(add => response.send({ add }))
+    .then(next)
+)
 router.post(
   '/adds',
   (request, response, next) => Add
