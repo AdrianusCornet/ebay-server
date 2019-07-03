@@ -17,7 +17,7 @@ const Add = db.define(
       field: 'p_url'
     },
     prise: {
-      type: Sequelize.NUMBER,
+      type: Sequelize.FLOAT,
       field: 'prise'
     },
     emailAdres: {
