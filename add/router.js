@@ -37,5 +37,13 @@ router.post(
     .then(add => response.status(201).send({add}))
     .catch(next)
 )
+router.put(
+  '/adds/:id',
+  (request, response, next) => Add
+    .findByPk(request.params.id)
+    .then(add => add.update(request.body))
+    .then(updatedAdd => response.send({ updatedAdd }))
+    .catch(next)
+)
 
 module.exports = router
