@@ -2,6 +2,7 @@
 // -npm
 const express = require('express')
 const bodyParser = require('body-parser')
+const corse = require('cors')
 // -routers
 const addRouter = require('./add/router')
 
@@ -14,6 +15,7 @@ const app = express()
 
 // routers
 app.listen(port, () => console.log(`lisenign on port: ${port}`))
+app.use(corse())
 app.use(jsonParser)
 app.use(addRouter)
 
